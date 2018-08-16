@@ -99,7 +99,7 @@ func TestParsePortsAndNew(t *testing.T) {
 		if dialer.dialed {
 			t.Fatalf("%d: expected not dialed", i)
 		}
-		if e, a := test.expected, pf.ports; !reflect.DeepEqual(e, a) {
+		if e, a := test.expected, pf.GetPorts(); !reflect.DeepEqual(e, a) {
 			t.Fatalf("%d: ports: expected %#v, got %#v", i, e, a)
 		}
 		if e, a := expectedStopChan, pf.stopChan; e != a {

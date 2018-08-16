@@ -340,3 +340,9 @@ func (pf *PortForwarder) Close() {
 		}
 	}
 }
+
+// GetPorts will return the ports that were forwarded; this can be used to
+// retrieve the locally-bound port in cases where the input was port 0.
+func (pf *PortForwarder) GetPorts() []ForwardedPort {
+	return pf.ports
+}
